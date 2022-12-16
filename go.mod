@@ -1,6 +1,6 @@
 module github.com/selefra/selefra-provider-heroku
 
-go 1.19
+go 1.18
 
 require (
 	github.com/heroku/heroku-go/v5 v5.5.0
