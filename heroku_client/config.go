@@ -5,6 +5,5 @@ type Configs struct {
 }
 
 type Config struct {
-	Email  string `yaml:"email"  mapstructure:"email"`
-	APIKey string `yaml:"api_key"  mapstructure:"api_key"`
+	Token string `yaml:"token,omitempty"  mapstructure:"token"`
 }

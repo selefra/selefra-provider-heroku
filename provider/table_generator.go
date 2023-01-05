@@ -1,18 +1,65 @@
 package provider
 
 import (
-	"github.com/selefra/selefra-provider-heroku/tables"
+	"github.com/selefra/selefra-provider-heroku/table_schema_generator"
+	"github.com/selefra/selefra-provider-heroku/table_schema_generator_tables"
 	"github.com/selefra/selefra-provider-sdk/provider/schema"
-	"github.com/selefra/selefra-provider-sdk/table_schema_generator"
 )
 
 func GenTables() []*schema.Table {
 	return []*schema.Table{
-		table_schema_generator.GenTableSchema(&tables.TableHerokuAccountGenerator{}),
-		table_schema_generator.GenTableSchema(&tables.TableHerokuRegionGenerator{}),
-		table_schema_generator.GenTableSchema(&tables.TableHerokuAddonGenerator{}),
-		table_schema_generator.GenTableSchema(&tables.TableHerokuKeyGenerator{}),
-		table_schema_generator.GenTableSchema(&tables.TableHerokuAppGenerator{}),
-		table_schema_generator.GenTableSchema(&tables.TableHerokuTeamGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuTeamAppPermissionsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuOauthAuthorizationsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuDomainsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuAddOntable_schema_generator_tablesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuTeamFeaturesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuCreditsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuOauthClientsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuTeamMembersGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuBuildsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuPeeringsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuAppFeaturesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuOutboundRulesetsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuTeamInvoicesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuFormationsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuAccountFeaturesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuKeysGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuPipelineReleasesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuPipelineBuildsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuSpacesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuCollaboratorsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuReviewAppsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuEnterpriseAccountsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuAddOnsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuEnterpriseAccountMembersGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuAppWebhookEventsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuStacksGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuTeamsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuPipelinesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuDynoSizesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuVpnConnectionsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuAppWebhookDeliveriesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuAddOnWebhookDeliveriesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuPermissionEntitiesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuAppWebhooksGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuRegionsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuBuildpackInstallationsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuSpaceAppAccessesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuReleasesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuAddOnAttachmentsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuAppsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuAddOnConfigsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuInvoicesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuLogDrainsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuPipelineCouplingsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuTeamSpacesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuAddOnWebhooksGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuInboundRulesetsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuAddOnRegionCapabilitiesGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuDynosGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuTeamInvitationsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuAddOnWebhookEventsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuPipelineDeploymentsGenerator{}),
+		table_schema_generator.GenTableSchema(&table_schema_generator_tables.TableHerokuAppTransfersGenerator{}),
 	}
 }

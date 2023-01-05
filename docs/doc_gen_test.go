@@ -1,17 +1,14 @@
-package docs
+package main
 
 import (
 	"fmt"
+	"github.com/selefra/selefra-provider-heroku/provider"
+	"github.com/selefra/selefra-provider-sdk/doc_gen"
 	"os"
 	"testing"
-
-	"github.com/selefra/selefra-provider-heroku/provider"
-
-	"github.com/selefra/selefra-provider-sdk/doc_gen"
 )
 
 func Test(t *testing.T) {
-
 	fmt.Println("begin...")
 	docOutputDirectory := os.Getenv("SELEFRA_DOC_OUTPUT_DIRECTORY")
 	if docOutputDirectory == "" {
@@ -23,5 +20,4 @@ func Test(t *testing.T) {
 		panic(err)
 	}
 	fmt.Println("done...")
-
 }
