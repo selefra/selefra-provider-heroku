@@ -2,6 +2,7 @@ package provider
 
 import (
 	"context"
+	"os"
 
 	"github.com/selefra/selefra-provider-heroku/heroku_client"
 	"github.com/selefra/selefra-provider-sdk/provider"
@@ -27,6 +28,14 @@ func GetProvider() *provider.Provider {
 
 				if len(clientConfig.Providers) == 0 {
 					clientConfig.Providers = append(clientConfig.Providers, heroku_client.Config{})
+				}
+
+				if clientConfig.Providers[0].Token == "" {
+					clientConfig.Providers[0].Token = os.Getenv("HEROKU_TOKEN")
+				}
+
+				if clientConfig.Providers[0].Token == "" {
+					return nil, schema.NewDiagnostics().AddErrorMsg("missing token in configuration")
 				}
 
 				clients, err := heroku_client.NewClients(clientConfig)
@@ -56,10 +65,6 @@ func GetProvider() *provider.Provider {
 				err := config.Unmarshal(&clientConfig.Providers)
 				if err != nil {
 					return schema.NewDiagnostics().AddErrorMsg("analysis config err: %s", err.Error())
-				}
-
-				if len(clientConfig.Providers) == 0 {
-					return schema.NewDiagnostics().AddErrorMsg("analysis config err: no configuration")
 				}
 				return nil
 			},
